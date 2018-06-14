@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+
+<body>
+
+  <ul>
+    <li data-time="5:17">Flexbox Video</li>
+    <li data-time="8:22">Flexbox Video</li>
+    <li data-time="3:34">Redux Video</li>
+    <li data-time="5:23">Flexbox Video</li>
+    <li data-time="7:12">Flexbox Video</li>
+    <li data-time="7:24">Redux Video</li>
+    <li data-time="6:46">Flexbox Video</li>
+    <li data-time="4:45">Flexbox Video</li>
+    <li data-time="4:40">Flexbox Video</li>
+    <li data-time="7:58">Redux Video</li>
+    <li data-time="11:51">Flexbox Video</li>
+    <li data-time="9:13">Flexbox Video</li>
+    <li data-time="5:50">Flexbox Video</li>
+    <li data-time="5:52">Redux Video</li>
+    <li data-time="5:49">Flexbox Video</li>
+    <li data-time="8:57">Flexbox Video</li>
+    <li data-time="11:29">Flexbox Video</li>
+    <li data-time="3:07">Flexbox Video</li>
+    <li data-time="5:59">Redux Video</li>
+    <li data-time="3:31">Flexbox Video</li>
+  </ul>
+
+  <script>
+
+    // Select all the list items on the page and convert to array
+    const listItemArray = Array.from(document.querySelectorAll('ul > li'));
+    // Filter for only the elements that contain the word 'flexbox'
+    const flexboxElementList = listItemArray.filter(listItem => listItem.textContent.includes('Flexbox'));
+    // map down to a list of time strings
+    const timeStringList = flexboxElementList.map(flexboxElement => flexboxElement.dataset.time);
+    // map to an array of seconds
+    const secondArray = timeStringList.map(timeString => {
+      const tempDate = new Date(`Thu Jan 01 1970 00:${timeString}`);
+      return tempDate.getSeconds() + tempDate.getMinutes() * 60;
+    });
+    // reduce to get total
+    const totalDuration = secondArray.reduce(((sum, second) => sum + second), 0);
+
+    const timeValue = new Date(totalDuration * 1000);
+    console.log(`The total duration of all flexbox videos is '${timeValue.getUTCHours()}:${timeValue.getUTCMinutes()}:${timeValue.getUTCSeconds()}'`);
+  // 🔥 This can also be done in a single .reduce(), but we're practicing arrow functions here, so chain them!
+
+  </script>
+</body>
+
+</html>
