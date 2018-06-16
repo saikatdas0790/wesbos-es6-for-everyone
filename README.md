@@ -1,13 +1,13 @@
 # Wes Bos - ES6 for Everyone
 
-## Module 1 - New Variables — Creation, Updating and Scoping
+## 1. New Variables — Creation, Updating and Scoping
 
 > Use `const` for most scenarios unless you need a value that you need to rebind, then use `let`
 
 - `var` is function-scoped
 - `let` and `const` is block-scoped
 
-## Module 2 - Function Improvements: Arrows and Default Arguments
+## 2. Function Improvements: Arrows and Default Arguments
 
 - Arrow functions are anonymous functions
 - `this` keyword used in arrow functions do not rebind to the object being used it. Still refers the parent object
@@ -24,3 +24,24 @@ function someFunction(paramter1 = "someValue") {}
 - When you need a method to bind to an object
 - When you need to add a prototype method
 - When you need arguments object
+
+## 3. Template Strings
+
+### Syntax
+
+```javascript
+function taggingFunction (strings, ...values) {
+
+}
+
+const someString = taggingFunction`Some literal text ${any JavaScript code} some more literal text${other JavaScript code}`;
+```
+
+- `strings` variable is always going to be _one_ more in length than `values` variable
+
+### Features
+
+- Easy string concatenation
+- Creating Javascript variables as HTML markup with inline JS in them
+- Nesting template strings (including _inline JS_)
+- Function tagging
