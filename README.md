@@ -45,3 +45,39 @@ const someString = taggingFunction`Some literal text ${any JavaScript code} some
 - Creating Javascript variables as HTML markup with inline JS in them
 - Nesting template strings (including _inline JS_)
 - Function tagging
+
+## 4. Additional String Improvements
+
+### New String Methods
+
+#### `.startsWith()`
+
+```javascript
+str.startsWith(searchString[, position])
+```
+
+> determines whether a string begins with the characters of a specified string, returning true or false
+
+#### `.endsWith()`
+
+```javascript
+str.endsWith(searchString[, length])
+```
+
+> determines whether a string ends with the characters of a specified string, returning true or false
+
+#### `.includes()`
+
+```javascript
+str.includes(searchString[, position])
+```
+
+> determines whether one string may be found within another string, returning true or false
+
+#### `.repeat()`
+
+```javascript
+str.repeat(count);
+```
+
+> constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
