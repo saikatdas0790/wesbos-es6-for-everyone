@@ -117,3 +117,54 @@ const someArray = ["Value1", "Value2", "Value3"];
 const [item1, ...others] = someArray;
 };
 ```
+
+## 6. Iterables and Looping
+
+### Different looping constructs in JavaScript
+
+#### `for` loop
+
+```javascript
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+```
+
+#### `array.forEach()` method
+
+```javascript
+array.forEach(element => {
+  console.log(element);
+});
+```
+
+- cannot use `break` or `continue` statements in `forEach()` loops
+
+#### `for...in` loops
+
+```javascript
+for (const index in array) {
+  console.log(array[index]);
+}
+```
+
+- iterates over the index of the `iterable` instead of the elements themselves
+- iterates over everything in the array including things (properties, methods) that have been added to the `prototype`
+
+#### `for...of` loops
+
+```javascript
+for (const element of array) {
+  console.log(element);
+}
+```
+
+- **Use** this looping construct by default
+- `array.entries()` lets us get at the generator for the `iterable`
+
+### Iterating over an `Object`
+
+- cannot iterate over an `Object`
+- `Object.entries()` and `Object.values()` included in ES2017
+- `Object.keys(someObject)` - returns an `array` of the `keys` of the `object`
+- Using `for...in` will also allow access to the `object`'s `keys`
