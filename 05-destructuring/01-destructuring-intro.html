@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring!</title>
+</head>
+
+<body>
+  <script>
+    const person = {
+      first: 'Saikat',
+      last: 'Das',
+      country: 'India',
+      city: 'Hyderabad',
+      twitter: '@saikatdas0790'
+    };
+
+    const { first, last, twitter } = person;
+
+    const saikat = {
+      first: 'Saikat',
+      last: 'Das',
+      links: {
+        social: {
+          twitter: 'https://twitter.com/saikatdas0790',
+          facebook: 'https://www.facebook.com/saikat.das.52',
+        },
+        web: {
+          blog: 'https://blog.saikatdas.me/'
+        }
+      }
+    };
+
+    const { twitter: tweet, facebook: fb } = saikat.links.social;
+
+    const settings = { width: 300, color: "black" }; // height, fontSize
+
+    const { width = 100, height = 100, color = "blue", fontSize = 25 } = settings;
+  </script>
+</body>
+
+</html>

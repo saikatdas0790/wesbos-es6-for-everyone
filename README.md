@@ -1,4 +1,4 @@
-# Wes Bos - ES6 for Everyone
+# Learning ES6 (ES2015) and beyond
 
 ## 1. New Variables — Creation, Updating and Scoping
 
@@ -81,3 +81,39 @@ str.repeat(count);
 ```
 
 > constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
+
+## 5. Destructuring
+
+### Destructuring objects
+
+```javascript
+// Accessing a flat object
+const someObject = {
+  property1: "Value1",
+  property2: "Value2",
+  property3: "Value3"
+};
+
+const { property1, property2, property3 } = { someObject };
+
+// Accessing a nested object
+const someObject = {
+  property1: "Value1",
+  property2: {
+    subProperty1: "Subvalue1",
+    subProperty2: "Subvalue2"
+  },
+  property3: "Value3"
+};
+
+const { subProperty1: renamedProperty1 = "DefaultValue1", subProperty2: renamedProperty2 = "DefaultValue2", subProperty3 = "DefaultValue3" } = { someObject.property2 };
+```
+
+### Destructuring Arrays
+
+```javascript
+const someArray = ["Value1", "Value2", "Value3"];
+
+const [item1, ...others] = someArray;
+};
+```
