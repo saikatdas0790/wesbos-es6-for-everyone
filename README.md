@@ -46,7 +46,7 @@ const someString = taggingFunction`Some literal text ${any JavaScript code} some
 - Nesting template strings (including _inline JS_)
 - Function tagging
 
-## 4. Additional String Improvements
+## 4. String Improvements
 
 ### New String Methods
 
@@ -168,3 +168,54 @@ for (const element of array) {
 - `Object.entries()` and `Object.values()` included in ES2017
 - `Object.keys(someObject)` - returns an `array` of the `keys` of the `object`
 - Using `for...in` will also allow access to the `object`'s `keys`
+
+## 7. Array Improvements
+
+### `Array.from()`
+
+```javascript
+Array.from(arrayLike[, mapFn[, thisArg]])
+```
+
+> creates a new, shallow-copied Array instance from an array-like or iterable object
+
+### `Array.of()`
+
+```javascript
+Array.of(element0[, element1[, ...[, elementN]]])
+```
+
+> creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.
+> The difference between `Array.of()` and the `Array` constructor is in the handling of integer arguments: `Array.of(7)` creates an array with a single element, 7, whereas `Array(7)` creates an empty array with a length property of 7
+
+### `Array.find()`
+
+```javascript
+arr.find(callback[, thisArg])
+```
+
+> returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned
+
+### `Array.findIndex()`
+
+```javascript
+arr.findIndex(callback[, thisArg])
+```
+
+> returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned
+
+### `Array.some()`
+
+```javascript
+arr.some(callback[, thisArg])
+```
+
+> tests whether at least one element in the array passes the test implemented by the provided function
+
+### `Array.every()`
+
+```javascript
+arr.every(callback[, thisArg])
+```
+
+> tests whether all elements in the array pass the test implemented by the provided function
