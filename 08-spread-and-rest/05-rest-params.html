@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Rest Param</title>
+</head>
+
+<body>
+  <script>
+    function convertCurrency(rate, tax, tip, ...amounts) {
+      return amounts.map(amount => amount * rate);
+    }
+
+    const amounts = convertCurrency(1.54, 10, 23, 52, 1, 56);
+
+    const runner = ['Saikat Das', 123, 5.5, 5, 3, 6, 35];
+    const [name, id, ...runs] = runner;
+
+    const team = ['Wes', 'Kait', 'Lux', 'Sheena', 'Kelly'];
+    const [captain, assistant, ...players] = team;
+  </script>
+</body>
+
+</html>

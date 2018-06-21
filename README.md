@@ -115,7 +115,6 @@ const { subProperty1: renamedProperty1 = "DefaultValue1", subProperty2: renamedP
 const someArray = ["Value1", "Value2", "Value3"];
 
 const [item1, ...others] = someArray;
-};
 ```
 
 ## 6. Iterables and Looping
@@ -210,7 +209,7 @@ arr.findIndex(callback[, thisArg])
 arr.some(callback[, thisArg])
 ```
 
-> tests whether at least one element in the array passes the test implemented by the provided function
+> tests whether _at least one_ element in the array passes the test implemented by the provided function
 
 ### `Array.every()`
 
@@ -218,4 +217,25 @@ arr.some(callback[, thisArg])
 arr.every(callback[, thisArg])
 ```
 
-> tests whether all elements in the array pass the test implemented by the provided function
+> tests whether _all elements_ in the array pass the test implemented by the provided function
+
+## 8. Spread and Rest operator
+
+### Spread
+
+```javascript
+var array = [[arg0ToN ,] ...iterable [, arg0ToN]]  
+func([args ,] ...iterable [, args | ...iterable])  
+```
+
+> Allows parts of an array literal to be initialized from an iterable expression (such as another array literal), or allows an expression to be expanded to multiple arguments (in function calls).
+
+### Rest
+
+```javascript
+function f(a, b, ...theArgs) {
+  // ...
+}
+```
+
+> The rest parameter syntax allows us to represent an indefinite number of arguments as an array
