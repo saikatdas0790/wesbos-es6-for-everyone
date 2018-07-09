@@ -239,3 +239,9 @@ function f(a, b, ...theArgs) {
 ```
 
 > The rest parameter syntax allows us to represent an indefinite number of arguments as an array
+
+## 9. Object Literal Upgrades
+
+- If property names are the same as variables, the variable name assignments in the object declaration can be skipped by only declaring the properties
+- For function declarations, can exclude the property name and set up a function declaration as the property
+- For object key-values, keys and objects can be declared using array values or template strings or a combination of the above
