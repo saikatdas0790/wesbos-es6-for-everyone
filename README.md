@@ -1,5 +1,15 @@
 # Learning ES6 (ES2015) and beyond
 
+## JavaScript Data Types
+
+- Boolean
+- Null
+- Undefined
+- Number
+- String
+- Symbol
+- Object
+
 ## 1. New Variables — Creation, Updating and Scoping
 
 > Use `const` for most scenarios unless you need a value that you need to rebind, then use `let`
@@ -264,3 +274,7 @@ new Promise(function(resolve, reject) {
 
 - `Promise.all`
 - `Promise.race`
+
+## 11. Symbols
+
+> "Symbol" is a primitive data type having the quality that, values of this type can be used to make object properties that are anonymous. This data type is used as the key for an object property when the property is intended to be private, for the internal use of a class or an object type.
