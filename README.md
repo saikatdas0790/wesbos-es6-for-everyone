@@ -245,3 +245,22 @@ function f(a, b, ...theArgs) {
 - If property names are the same as variables, the variable name assignments in the object declaration can be skipped by only declaring the properties
 - For function declarations, can exclude the property name and set up a function declaration as the property
 - For object key-values, keys and objects can be declared using array values or template strings or a combination of the above
+
+## 10. Promises
+
+> The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value
+
+> Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function
+
+```javascript
+new Promise(function(resolve, reject) {
+  // any processing code
+  // code for resolve
+  // code for reject
+});
+```
+
+### Useful methods
+
+- `Promise.all`
+- `Promise.race`
