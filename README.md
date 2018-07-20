@@ -234,8 +234,8 @@ arr.every(callback[, thisArg])
 ### Spread
 
 ```javascript
-var array = [[arg0ToN ,] ...iterable [, arg0ToN]]  
-func([args ,] ...iterable [, args | ...iterable])  
+var array = [[arg0ToN ,] ...iterable [, arg0ToN]]
+func([args ,] ...iterable [, args | ...iterable])
 ```
 
 > Allows parts of an array literal to be initialized from an iterable expression (such as another array literal), or allows an expression to be expanded to multiple arguments (in function calls).
@@ -277,4 +277,9 @@ new Promise(function(resolve, reject) {
 
 ## 11. Symbols
 
-> "Symbol" is a primitive data type having the quality that, values of this type can be used to make object properties that are anonymous. This data type is used as the key for an object property when the property is intended to be private, for the internal use of a class or an object type.
+> "Symbol" is a primitive data type having the quality that, values of this type can be used to make object properties that are anonymous. This data type is used as the key for an object property when the property is intended to be private, for the internal use of a class or an object type
+
+## 12. Code Quality with ESLint and Prettier
+
+- Set up ESLint plugin and use node modules to import packages for ESLint and Prettier and configure them to work well with each other
+- Modify the git commit message hook to deny commits that fail eslint error validations
