@@ -283,3 +283,150 @@ new Promise(function(resolve, reject) {
 
 - Set up ESLint plugin and use node modules to import packages for ESLint and Prettier and configure them to work well with each other
 - Modify the git commit message hook to deny commits that fail eslint error validations
+
+## 13. JavaScript Modules and Using npm
+
+### `import` statement
+
+> import statement is used to import bindings which are exported by another module
+
+```javascript
+import defaultExport from "module-name";
+import * as name from "module-name";
+import { export } from "module-name";
+import { export as alias } from "module-name";
+import { export1 , export2 } from "module-name";
+import { export1 , export2 as alias2 , [...] } from "module-name";
+import defaultExport, { export [ , [...] ] } from "module-name";
+import defaultExport, * as name from "module-name";
+import "module-name";
+var promise = import(module-name);
+```
+
+#### Dynamic Imports
+
+> The import keyword may be called as a function to dynamically import a module. When used this way, it returns a promise.
+
+```javascript
+import("/modules/my-module.js").then(module => {
+  // Do something with the module.
+});
+```
+
+> This form also supports the await keyword
+
+```javascript
+let module = await import('/modules/my-module.js');
+```
+
+### `export` statement
+
+> export statement is used when creating JavaScript modules to export functions, objects, or primitive values from the module so they can be used by other programs with the import statement
+
+```javascript
+export { name1, name2, …, nameN };
+export { variable1 as name1, variable2 as name2, …, nameN };
+export let name1, name2, …, nameN; // also var, const
+export let name1 = …, name2 = …, …, nameN; // also var, const
+export function FunctionName(){...}
+export class ClassName {...}
+
+export default expression;
+export default function (…) { … } // also class, function*
+export default function name1(…) { … } // also class, function*
+export { name1 as default, … };
+
+export * from …;
+export { name1, name2, …, nameN } from …;
+export { import1 as name1, import2 as name2, …, nameN } from …;
+export { default } from …;
+```
+
+#### Named exports:
+
+```javascript
+// exports a function declared earlier
+export { myFunction };
+
+// exports a constant
+export const foo = Math.sqrt(2);
+```
+
+#### Default exports (function)
+
+```javascript
+export default function() {}
+```
+
+## 14. ES6 Tooling
+
+### Alternative Tools
+
+- SystemJS - For ES6 module support
+- Polyfill.io - For polyfilling in browsers
+
+## 15. Classes
+
+### Prototypal Inheritance
+
+When it comes to inheritance, JavaScript only has one construct: objects. Each object has a private property which holds a link to another object called its prototype. That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype. By definition, null has no prototype, and acts as the final link in this prototype chain
+
+JavaScript objects are dynamic "bags" of properties (referred to as **own properties**). JavaScript objects have a link to a prototype object. When trying to access a property of an object, the property will not only be sought on the object but on the prototype of the object, the prototype of the prototype, and so on until either a property with a matching name is found or the end of the prototype chain is reached
+
+### `Class` features
+
+#### `constructor` method
+
+The `constructor` method is a special method for creating and initializing an object created with a `class`. There can only be one special method with the name "constructor" in a class. A `SyntaxError` will be thrown if the class contains more than one occurrence of a `constructor` method.
+
+A constructor can use the `super` keyword to call the constructor of the super class.
+
+#### `static` keyword
+
+The `static` keyword defines a static method for a class. Static methods are called without instantiating their class and **cannot** be called through a class instance. Static methods are often used to create utility functions for an application.
+
+#### `get` properties
+
+The `get` syntax binds an object property to a function that will be called when that property is looked up.
+
+```javascript
+class SomeClass {
+  get prop() {
+    return someProperty;
+  }
+}
+```
+
+#### `set` properties
+
+The `set` syntax binds an object property to a function to be called when there is an attempt to set that property
+
+```javascript
+class SomeClass {
+  let someVariable;
+  set prop(value) {
+    this.someVariable = value;
+  }
+}
+```
+
+#### `super` keyword
+
+The `super` keyword is used to access and call functions on an object's parent.
+
+The `super.prop` and `super[expr]` expressions are valid in any method definition in both classes and object literals
+
+```javascript
+super([arguments]); // calls the parent constructor.
+super.functionOnParent([arguments]);
+```
+
+#### `extends` keyword
+
+The `extends` keyword is used in class declarations or class expressions to create a class which is a child of another class
+
+```javascript
+class ChildClass extends ParentClass {
+  ...
+}
+```
