@@ -446,3 +446,11 @@ function* name([param[, param[, ... param]]]) {
   yield statements;
 }
 ```
+
+## 17. Proxies
+
+The `Proxy` object is used to define custom behavior for fundamental operations (e.g. property lookup, assignment, enumeration, function invocation, etc).
+
+```javascript
+var p = new Proxy(target, handler);
+```
