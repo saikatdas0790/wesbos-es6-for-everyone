@@ -430,3 +430,19 @@ class ChildClass extends ParentClass {
   ...
 }
 ```
+
+## 16. Generators
+
+They allow you to define an iterative algorithm by writing a single function which can maintain its own state.
+
+A GeneratorFunction is a special type of function that works as a factory for iterators. When it is executed it returns a new Generator object. A function becomes a GeneratorFunction if it uses the `function*` syntax
+
+An object is an `iterator` when it knows how to access items from a collection one at a time, while keeping track of its current position within that sequence. In JavaScript an iterator is an object that provides a `next()` method which returns the next item in the sequence. This method returns an object with two properties: `done` and `value`.
+
+An iterator is considered to be finished/terminated when `next()` calls return an object with the `done` property set to `true`
+
+```javascript
+function* name([param[, param[, ... param]]]) {
+  yield statements;
+}
+```
