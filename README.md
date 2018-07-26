@@ -472,3 +472,21 @@ The `WeakSet` object lets you store weakly held objects in a collection
 ```javascript
 new WeakSet([iterable]);
 ```
+
+## 19. Map and WeakMap
+
+### Map
+
+The `Map` object holds key-value pairs. Any value (both objects and primitive values) may be used as either a key or a value.
+
+```javascript
+new Map([iterable]);
+```
+
+### WeakMap
+
+The `WeakMap` object is a collection of key/value pairs in which the keys are weakly referenced. The keys must be objects and the values can be arbitrary values.
+
+```javascript
+new WeakMap([iterable]);
+```
