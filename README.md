@@ -454,3 +454,21 @@ The `Proxy` object is used to define custom behavior for fundamental operations 
 ```javascript
 var p = new Proxy(target, handler);
 ```
+
+## 18. Sets and WeakSets
+
+### Sets
+
+The `Set` object lets you store unique values of any type, whether primitive values or object references.
+
+```javascript
+new Set([iterable]);
+```
+
+### WeakSets
+
+The `WeakSet` object lets you store weakly held objects in a collection
+
+```javascript
+new WeakSet([iterable]);
+```
