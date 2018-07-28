@@ -490,3 +490,23 @@ The `WeakMap` object is a collection of key/value pairs in which the keys are we
 ```javascript
 new WeakMap([iterable]);
 ```
+
+## 20. Async + Await Flow Control
+
+### Async
+
+The _async function_ declaration defines an _asynchronous function_, which returns an `AsyncFunction` object. An asynchronous function is a function which operates asynchronously via the event loop, using an implicit `Promise` to return its result.
+
+```javascript
+async function name([param[, param[, ... param]]]) {
+   statements
+}
+```
+
+### Await
+
+The `await` operator is used to wait for a `Promise`. It can only be used inside an `async` function.
+
+```javascript
+[returnValue] = await expression;
+```
